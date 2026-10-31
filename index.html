@@ -1,58 +1,150 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Life Dashboard CodingCamp</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <div class="dashboard">
-    <header class="card header-card">
-      <div class="header-top">
-        <h1 id="clock">00:00:00</h1>
-        <button id="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
-      </div>
-      <p id="date">Tanggal</p>
-      <h2 id="greeting">Good Morning</h2>
 
-      <div class="name-container">
-        <input type="text" id="name-input" placeholder="Masukkan namamu di sini..." onchange="saveName()">
-      </div>
-    </header>
+    <main class="dashboard">
+
+        <header class="card header-card">
+
+            <div class="header-top">
+
+                <h1 id="clock">00:00:00</h1>
+
+                <button id="theme-btn">
+                    🌙 Dark Mode
+                </button>
+
+            </div>
+
+            <p id="date">Tanggal</p>
+
+            <h2 id="greeting">Good Morning</h2>
+
+            <div class="name-container">
+
+                <input
+                    type="text"
+                    id="name-input"
+                    placeholder="Masukkan namamu..."
+                    maxlength="40"
+                >
+
+            </div>
+
+        </header>
 
 
-    <section class="card">
-      <h3>Focus Timer</h3>
-      <div id="timer-display">25:00</div>
-      <div class="button-group">
-        <button onclick="startTimer()">Start</button>
-        <button onclick="stopTimer()">Stop</button>
-        <button onclick="resetTimer()">Reset</button>
-      </div>
-    </section>
+        <section class="card timer-card">
+
+            <h3>Focus Timer</h3>
+
+            <div id="timer-display">25:00</div>
+
+            <div class="timer-setting">
+
+                <label for="timer-minutes">
+                    Durasi (menit)
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="number"
+                        id="timer-minutes"
+                        min="1"
+                        max="180"
+                        value="25"
+                    >
+
+                    <button id="set-timer-btn">
+                        Atur
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="button-group">
+
+                <button id="start-btn">Start</button>
+
+                <button id="stop-btn">Stop</button>
+
+                <button id="reset-btn">Reset</button>
+
+            </div>
+
+            <p id="timer-status">Siap untuk fokus?</p>
+
+        </section>
 
 
-    <section class="card">
-      <h3>Tasks</h3>
-      <div class="input-group">
-        <input type="text" id="task-input" placeholder="Tambah tugas baru...">
-        <button onclick="addTask()">Tambah</button>
-      </div>
-      <ul id="task-list"></ul>
-    </section>
+        <section class="card tasks-card">
 
-    <section class="card">
-      <h3>Quick Links</h3>
-      <div class="input-group-vertical">
-        <input type="text" id="link-name" placeholder="Nama Website">
-        <input type="url" id="link-url" placeholder="https://...">
-        <button onclick="addLink()">Tambah Link</button>
-      </div>
-      <div id="links-container"></div>
-    </section>
-  </div>
+            <h3>Tasks</h3>
 
-  <script src="js/script.js"></script>
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="Tambah tugas baru..."
+                    maxlength="150"
+                >
+
+                <button id="add-task-btn">
+                    Tambah
+                </button>
+
+            </div>
+
+            <ul id="task-list"></ul>
+
+        </section>
+
+
+        <section class="card links-card">
+
+            <h3>Quick Links</h3>
+
+            <div class="input-group-vertical">
+
+                <input
+                    type="text"
+                    id="link-name"
+                    placeholder="Nama Website"
+                    maxlength="40"
+                >
+
+                <input
+                    type="url"
+                    id="link-url"
+                    placeholder="https://..."
+                >
+
+                <button id="add-link-btn">
+                    Tambah Link
+                </button>
+
+            </div>
+
+            <div id="links-container"></div>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
